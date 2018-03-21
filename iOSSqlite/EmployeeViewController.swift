@@ -17,7 +17,8 @@ class EmployeeViewController: UIViewController {
     }
     
     private struct LocalConstants {
-        
+        static let BUTTON_SAVE_MODE = "Save"
+        static let BUTTON_EDIT_MODE = "Edit"
     }
 
     @IBOutlet weak var imageEmployee: UIImageView!
@@ -48,7 +49,7 @@ class EmployeeViewController: UIViewController {
     }
     
     func editModeEnabled(_ value:Bool) {
-        self.buttonSave.setTitle(value == true ? "Save" : "Edit", for: .normal)
+        self.buttonSave.setTitle(value == true ? LocalConstants.BUTTON_SAVE_MODE : LocalConstants.BUTTON_EDIT_MODE, for: .normal)
         self.textName.isUserInteractionEnabled = value
         self.textEmail.isUserInteractionEnabled = value
     }

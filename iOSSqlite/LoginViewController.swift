@@ -11,9 +11,14 @@ import UIKit
 class LoginViewController: UIViewController {
     
     private struct LocalConstants {
+        // Storyboard
+        static let STORYBOARD_MAIN = "Main"
+        static let VIEWCONTROLLER_HOME = "VIEW_HOME"
+        
         // Segues
         static let SEGUE_REGISTER:String = "SEGUE_LOGIN_REGISTER"
         static let SEGUE_RESET:String = "SEGUE_LOGIN_RESET"
+        
     }
     
     @IBOutlet weak var textEmail: UITextField!
@@ -40,8 +45,8 @@ class LoginViewController: UIViewController {
     }
     
     func showHomeScreen() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeNavigationController = storyboard.instantiateViewController(withIdentifier: "VIEW_HOME")
+        let storyboard = UIStoryboard(name: LocalConstants.STORYBOARD_MAIN, bundle: nil)
+        let homeNavigationController = storyboard.instantiateViewController(withIdentifier: LocalConstants.VIEWCONTROLLER_HOME)
         UIApplication.shared.keyWindow?.rootViewController = homeNavigationController
         UIApplication.shared.keyWindow?.makeKeyAndVisible()
     }
