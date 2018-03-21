@@ -12,6 +12,9 @@
 		782118242062224100649CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 782118222062224100649CF6 /* Main.storyboard */; };
 		782118262062224100649CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 782118252062224100649CF6 /* Assets.xcassets */; };
 		782118292062224100649CF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 782118272062224100649CF6 /* LaunchScreen.storyboard */; };
+		7821183220623A3F00649CF6 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821183120623A3F00649CF6 /* SignupViewController.swift */; };
+		7821183420623A5700649CF6 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821183320623A5700649CF6 /* ResetPasswordViewController.swift */; };
+		7821183620623A6700649CF6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821183520623A6700649CF6 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		782118252062224100649CF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		782118282062224100649CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7821182A2062224100649CF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7821183120623A3F00649CF6 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		7821183320623A5700649CF6 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		7821183520623A6700649CF6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +61,13 @@
 			isa = PBXGroup;
 			children = (
 				7821181E2062224100649CF6 /* AppDelegate.swift */,
-				782118202062224100649CF6 /* LoginViewController.swift */,
 				782118222062224100649CF6 /* Main.storyboard */,
-				782118252062224100649CF6 /* Assets.xcassets */,
 				782118272062224100649CF6 /* LaunchScreen.storyboard */,
+				782118202062224100649CF6 /* LoginViewController.swift */,
+				7821183120623A3F00649CF6 /* SignupViewController.swift */,
+				7821183320623A5700649CF6 /* ResetPasswordViewController.swift */,
+				7821183520623A6700649CF6 /* HomeViewController.swift */,
+				782118252062224100649CF6 /* Assets.xcassets */,
 				7821182A2062224100649CF6 /* Info.plist */,
 			);
 			path = iOSSqlite;
@@ -136,8 +145,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7821183620623A6700649CF6 /* HomeViewController.swift in Sources */,
+				7821183220623A3F00649CF6 /* SignupViewController.swift in Sources */,
 				782118212062224100649CF6 /* LoginViewController.swift in Sources */,
 				7821181F2062224100649CF6 /* AppDelegate.swift in Sources */,
+				7821183420623A5700649CF6 /* ResetPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
