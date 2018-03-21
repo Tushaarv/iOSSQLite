@@ -25,9 +25,32 @@ class EmployeeViewController: UIViewController {
     @IBOutlet weak var textEmail: UITextField!
     @IBOutlet weak var buttonSave: UIButton!
     var mode:Mode! = .new
+    var selectedEmployee:Employee?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if self.selectedEmployee != nil {
+            self.textName.text = self.selectedEmployee?.name
+            self.textEmail.text = self.selectedEmployee?.email
+        }
+        
+        switch mode {
+        case .view:
+            self.editModeEnabled(false)
+            break
+        case .edit:
+            self.editModeEnabled(true)
+            break
+        default:
+            self.editModeEnabled(true)
+        }
+    }
+    
+    func editModeEnabled(_ value:Bool) {
+        self.buttonSave.setTitle(value == true ? "Save" : "Edit", for: .normal)
+        self.textName.isUserInteractionEnabled = value
+        self.textEmail.isUserInteractionEnabled = value
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +58,11 @@ class EmployeeViewController: UIViewController {
     }
     
     @IBAction func didClickSave(_ sender: UIButton) {
-        
+        if mode == .view {
+            self.editModeEnabled(true)
+        }
+        else {
+            
+        }
     }
 }
