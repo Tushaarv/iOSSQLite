@@ -21,5 +21,6 @@ class ResetPasswordViewController: UIViewController {
     }
     
     @IBAction func didClickResetPassword(_ sender: UIButton) {
+        
     }
 }

@@ -11,7 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
     
     private struct LocalConstants {
-        // Constants
+        // Segues
         static let SEGUE_LOGIN_REGISTER:String = "SEGUE_LOGIN_REGISTER"
         static let SEGUE_LOGIN_RESET:String = "SEGUE_LOGIN_RESET"
         static let SEGUE_LOGIN_HOME:String = "SEGUE_LOGIN_HOME"
@@ -37,6 +37,14 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didClickLogin(_ sender: UIButton) {
+        self.showHomeScreen()
+    }
+    
+    func showHomeScreen() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeNavigationController = storyboard.instantiateViewController(withIdentifier: "VIEW_HOME")
+        UIApplication.shared.keyWindow?.rootViewController = homeNavigationController
+        UIApplication.shared.keyWindow?.makeKeyAndVisible()
     }
 }
 
