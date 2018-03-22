@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EmployeeViewController: UIViewController {
+class EmployeeViewController: BaseViewController {
     
     enum Mode {
         case new

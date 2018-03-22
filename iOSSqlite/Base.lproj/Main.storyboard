@@ -442,9 +442,11 @@
                     </view>
                     <connections>
                         <outlet property="textEmail" destination="m8i-uR-Ccl" id="mgD-f0-SHL"/>
+                        <segue destination="Ds7-fz-gIs" kind="unwind" identifier="SEGUE_RESET_LOGIN" unwindAction="unwindToLoginWithSegue:" id="bpT-r9-JIf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUf-PF-icq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ds7-fz-gIs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1428" y="491.60419790104953"/>
         </scene>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
     
     private struct LocalConstants {
         // Storyboard
@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didClickLogin(_ sender: UIButton) {
-        self.showHomeScreen()
+        self.verifyLogin()
     }
     
     func showHomeScreen() {
@@ -58,5 +58,34 @@ class LoginViewController: UIViewController {
     func showResetPasswordScreen () {
         self.performSegue(withIdentifier: LocalConstants.SEGUE_RESET, sender: self)
     }
+    
+    func verifyLogin() {
+        let email:String = (textEmail.text?.trimmingCharacters(in: .whitespaces).lowercased())!
+        let password = textPassword.text!
+        if self.isLoginDataValid(email:email, password: password) {
+            // Equate Login Details
+            if email == "tushaarv@gmail.com" && password == "qwerty" {
+                self.showHomeScreen()
+            }
+            else {
+                Alerts.showError(parentView: self, message: "Authentication Failed")
+            }
+        }
+    }
+    
+    func isLoginDataValid(email:String, password:String) -> Bool {
+        if !(email.isValidEmail()) {
+            Alerts.showError(parentView: self, message: "Invalid Email")
+            return false
+        }
+        if !(password.isValidPassword()) {
+            Alerts.showError(parentView: self, message: "Invalid Password")
+            return false
+        }
+        return true
+    }
+    
+    @IBAction func unwindToLogin(segue:UIStoryboardSegue) {}
+    
 }
 

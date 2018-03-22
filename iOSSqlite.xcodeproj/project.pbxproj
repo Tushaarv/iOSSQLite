@@ -19,6 +19,8 @@
 		7821183C20625B3300649CF6 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821183B20625B3300649CF6 /* Employee.swift */; };
 		7821183E20625DB900649CF6 /* TableViewCellEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821183D20625DB900649CF6 /* TableViewCellEmployee.swift */; };
 		7821184020626AAB00649CF6 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821183F20626AAB00649CF6 /* Alerts.swift */; };
+		7821184420627B5400649CF6 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821184320627B5400649CF6 /* Common.swift */; };
+		78211846206285D300649CF6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78211845206285D300649CF6 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		7821183B20625B3300649CF6 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		7821183D20625DB900649CF6 /* TableViewCellEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellEmployee.swift; sourceTree = "<group>"; };
 		7821183F20626AAB00649CF6 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		7821184320627B5400649CF6 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		78211845206285D300649CF6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 				7821181E2062224100649CF6 /* AppDelegate.swift */,
 				7821183B20625B3300649CF6 /* Employee.swift */,
 				7821183F20626AAB00649CF6 /* Alerts.swift */,
+				7821184320627B5400649CF6 /* Common.swift */,
+				78211845206285D300649CF6 /* BaseViewController.swift */,
 				782118222062224100649CF6 /* Main.storyboard */,
 				782118272062224100649CF6 /* LaunchScreen.storyboard */,
 				7821183D20625DB900649CF6 /* TableViewCellEmployee.swift */,
@@ -159,12 +165,14 @@
 			files = (
 				7821183620623A6700649CF6 /* HomeViewController.swift in Sources */,
 				7821183E20625DB900649CF6 /* TableViewCellEmployee.swift in Sources */,
+				78211846206285D300649CF6 /* BaseViewController.swift in Sources */,
 				7821183220623A3F00649CF6 /* SignupViewController.swift in Sources */,
 				782118212062224100649CF6 /* LoginViewController.swift in Sources */,
 				7821183C20625B3300649CF6 /* Employee.swift in Sources */,
 				7821181F2062224100649CF6 /* AppDelegate.swift in Sources */,
 				7821183A2062424500649CF6 /* EmployeeViewController.swift in Sources */,
 				7821184020626AAB00649CF6 /* Alerts.swift in Sources */,
+				7821184420627B5400649CF6 /* Common.swift in Sources */,
 				7821183420623A5700649CF6 /* ResetPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
