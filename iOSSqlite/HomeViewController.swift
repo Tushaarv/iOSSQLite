@@ -27,11 +27,11 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fetchEmployees()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.fetchEmployees()
     }
     
     override func didReceiveMemoryWarning() {

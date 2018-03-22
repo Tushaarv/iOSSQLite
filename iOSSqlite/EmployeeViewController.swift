@@ -20,7 +20,7 @@ class EmployeeViewController: BaseViewController {
         static let BUTTON_SAVE_MODE = "Save"
         static let BUTTON_EDIT_MODE = "Edit"
     }
-
+    
     @IBOutlet weak var imageEmployee: UIImageView!
     @IBOutlet weak var textName: UITextField!
     @IBOutlet weak var textEmail: UITextField!
@@ -51,9 +51,12 @@ class EmployeeViewController: BaseViewController {
     func editModeEnabled(_ value:Bool) {
         self.buttonSave.setTitle(value == true ? LocalConstants.BUTTON_SAVE_MODE : LocalConstants.BUTTON_EDIT_MODE, for: .normal)
         self.textName.isUserInteractionEnabled = value
-        self.textEmail.isUserInteractionEnabled = value
+        
+        if mode != .new {
+            self.textEmail.isUserInteractionEnabled = value
+        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -61,9 +64,60 @@ class EmployeeViewController: BaseViewController {
     @IBAction func didClickSave(_ sender: UIButton) {
         if mode == .view {
             self.editModeEnabled(true)
+            mode = .edit
+        }
+        else if mode == .new {
+            addNewEmployee()
         }
         else {
-            
+            updateEmployee(employee:self.selectedEmployee!)
         }
+    }
+    
+    func addNewEmployee() {
+        
+        let email:String = (textEmail.text?.trimmingCharacters(in: .whitespaces).lowercased())!
+        let name = textName.text!
+        if self.isEmployeeDataValid(name:name, email:email) {
+            // Save Employee Details
+            let employee:Employee = Employee(name: name, email: email)
+            if !self.exployeeExists(employee: employee) {
+                Common.employees.append(employee)
+            }
+            else {
+                Alerts.showError(parentView: self, message: "Employee Save Failed")
+            }
+        }
+    }
+    
+    func exployeeExists(employee:Employee) -> Bool {
+        return Common.employees.filter{$0.email == employee.email}.count != 0
+    }
+    
+    func updateEmployee(employee: Employee) {
+        let name = textName.text!
+        if self.isEmployeeDataValid(name:name, email:employee.email!) {
+            if self.exployeeExists(employee: employee) {
+                // Update Employee Details
+                let temp:Employee = Common.employees.filter{$0.email! == employee.email!}.first!
+                let index:Int = Common.employees.index{$0 === temp}!
+                Common.employees[index].name = name
+            }
+            else {
+                Alerts.showError(parentView: self, message: "Employee update Failed")
+            }
+        }
+    }
+    
+    func isEmployeeDataValid(name:String, email:String) -> Bool {
+        if !(name.isValidString()) {
+            Alerts.showError(parentView: self, message: "Invalid Name")
+            return false
+        }
+        if !(email.isValidEmail()) {
+            Alerts.showError(parentView: self, message: "Invalid Email")
+            return false
+        }
+        return true
     }
 }
