@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+class Common {
+    public static var employees:[Employee] = [Employee]()
+}
+
+
 public extension String {
     
     func isValidEmail() -> Bool {

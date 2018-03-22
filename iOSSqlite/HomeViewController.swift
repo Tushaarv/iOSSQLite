@@ -27,9 +27,7 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.employees.append(Employee(name: "Tushar", email: "tushar@transerve.com"))
-        self.employees.append(Employee(name: "Swarupa", email: "swarupa@creative.com"))
-        tableEmployees.reloadData()
+        self.fetchEmployees()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,6 +60,21 @@ class HomeViewController: BaseViewController {
     func showEmployeeScreen() {
         self.performSegue(withIdentifier: LocalConstants.SEGUE_HOME_EMPLOYEE, sender: self)
     }
+    
+    func fetchEmployees() {
+        self.employees = [Employee]()
+        self.employees.append(contentsOf: Common.employees)
+        tableEmployees.reloadData()
+    }
+    
+    func deleteEmployee(indexPath:IndexPath) {
+        let employee =  self.employees[indexPath.row]
+        let index:Int = employees.index{$0 === employee}!
+        Common.employees.remove(at: index)
+        fetchEmployees()
+        tableEmployees.reloadData()
+        //        tableEmployees.deleteRows(at: [indexPath], with: .automatic)
+    }
 }
 
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
@@ -84,5 +97,11 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedEmployee = self.employees[indexPath.row]
         self.showEmployeeScreen()
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.deleteEmployee(indexPath: indexPath)
+        }
     }
 }
