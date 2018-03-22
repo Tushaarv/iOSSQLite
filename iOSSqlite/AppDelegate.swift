@@ -14,6 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        Common.employees.append(Employee(name: "Tushar", email: "tushar@transerve.com"))
+        Common.employees.append(Employee(name: "Swarupa", email: "swarupa@creative.com"))
+        
         return true
     }
 

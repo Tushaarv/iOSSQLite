@@ -12,6 +12,15 @@
 		782118242062224100649CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 782118222062224100649CF6 /* Main.storyboard */; };
 		782118262062224100649CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 782118252062224100649CF6 /* Assets.xcassets */; };
 		782118292062224100649CF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 782118272062224100649CF6 /* LaunchScreen.storyboard */; };
+		7821183220623A3F00649CF6 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821183120623A3F00649CF6 /* SignupViewController.swift */; };
+		7821183420623A5700649CF6 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821183320623A5700649CF6 /* ResetPasswordViewController.swift */; };
+		7821183620623A6700649CF6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821183520623A6700649CF6 /* HomeViewController.swift */; };
+		7821183A2062424500649CF6 /* EmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782118392062424500649CF6 /* EmployeeViewController.swift */; };
+		7821183C20625B3300649CF6 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821183B20625B3300649CF6 /* Employee.swift */; };
+		7821183E20625DB900649CF6 /* TableViewCellEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821183D20625DB900649CF6 /* TableViewCellEmployee.swift */; };
+		7821184020626AAB00649CF6 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821183F20626AAB00649CF6 /* Alerts.swift */; };
+		7821184420627B5400649CF6 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821184320627B5400649CF6 /* Common.swift */; };
+		78211846206285D300649CF6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78211845206285D300649CF6 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +31,15 @@
 		782118252062224100649CF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		782118282062224100649CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7821182A2062224100649CF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7821183120623A3F00649CF6 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		7821183320623A5700649CF6 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		7821183520623A6700649CF6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		782118392062424500649CF6 /* EmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewController.swift; sourceTree = "<group>"; };
+		7821183B20625B3300649CF6 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		7821183D20625DB900649CF6 /* TableViewCellEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellEmployee.swift; sourceTree = "<group>"; };
+		7821183F20626AAB00649CF6 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		7821184320627B5400649CF6 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		78211845206285D300649CF6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +73,19 @@
 			isa = PBXGroup;
 			children = (
 				7821181E2062224100649CF6 /* AppDelegate.swift */,
-				782118202062224100649CF6 /* LoginViewController.swift */,
+				7821183B20625B3300649CF6 /* Employee.swift */,
+				7821183F20626AAB00649CF6 /* Alerts.swift */,
+				7821184320627B5400649CF6 /* Common.swift */,
+				78211845206285D300649CF6 /* BaseViewController.swift */,
 				782118222062224100649CF6 /* Main.storyboard */,
-				782118252062224100649CF6 /* Assets.xcassets */,
 				782118272062224100649CF6 /* LaunchScreen.storyboard */,
+				7821183D20625DB900649CF6 /* TableViewCellEmployee.swift */,
+				782118202062224100649CF6 /* LoginViewController.swift */,
+				7821183120623A3F00649CF6 /* SignupViewController.swift */,
+				7821183320623A5700649CF6 /* ResetPasswordViewController.swift */,
+				7821183520623A6700649CF6 /* HomeViewController.swift */,
+				782118392062424500649CF6 /* EmployeeViewController.swift */,
+				782118252062224100649CF6 /* Assets.xcassets */,
 				7821182A2062224100649CF6 /* Info.plist */,
 			);
 			path = iOSSqlite;
@@ -136,8 +163,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7821183620623A6700649CF6 /* HomeViewController.swift in Sources */,
+				7821183E20625DB900649CF6 /* TableViewCellEmployee.swift in Sources */,
+				78211846206285D300649CF6 /* BaseViewController.swift in Sources */,
+				7821183220623A3F00649CF6 /* SignupViewController.swift in Sources */,
 				782118212062224100649CF6 /* LoginViewController.swift in Sources */,
+				7821183C20625B3300649CF6 /* Employee.swift in Sources */,
 				7821181F2062224100649CF6 /* AppDelegate.swift in Sources */,
+				7821183A2062424500649CF6 /* EmployeeViewController.swift in Sources */,
+				7821184020626AAB00649CF6 /* Alerts.swift in Sources */,
+				7821184420627B5400649CF6 /* Common.swift in Sources */,
+				7821183420623A5700649CF6 /* ResetPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
