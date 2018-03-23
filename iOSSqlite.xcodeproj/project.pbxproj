@@ -21,6 +21,13 @@
 		7821184020626AAB00649CF6 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821183F20626AAB00649CF6 /* Alerts.swift */; };
 		7821184420627B5400649CF6 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821184320627B5400649CF6 /* Common.swift */; };
 		78211846206285D300649CF6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78211845206285D300649CF6 /* BaseViewController.swift */; };
+		7845CD5F2064F72D005DC2FC /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845CD5E2064F72D005DC2FC /* LoginPresenter.swift */; };
+		7845CD612064F846005DC2FC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845CD602064F846005DC2FC /* User.swift */; };
+		7845CD6920650423005DC2FC /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845CD6820650423005DC2FC /* BaseView.swift */; };
+		7845CD6D20650D7D005DC2FC /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845CD6C20650D7D005DC2FC /* SignupPresenter.swift */; };
+		7845CD6F20650F29005DC2FC /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845CD6E20650F29005DC2FC /* ResetPasswordPresenter.swift */; };
+		7845CD71206511A1005DC2FC /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845CD70206511A1005DC2FC /* HomePresenter.swift */; };
+		7845CD7320651A68005DC2FC /* EmployeePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845CD7220651A68005DC2FC /* EmployeePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +47,13 @@
 		7821183F20626AAB00649CF6 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		7821184320627B5400649CF6 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		78211845206285D300649CF6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		7845CD5E2064F72D005DC2FC /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		7845CD602064F846005DC2FC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7845CD6820650423005DC2FC /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		7845CD6C20650D7D005DC2FC /* SignupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
+		7845CD6E20650F29005DC2FC /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
+		7845CD70206511A1005DC2FC /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		7845CD7220651A68005DC2FC /* EmployeePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,22 +87,77 @@
 			isa = PBXGroup;
 			children = (
 				7821181E2062224100649CF6 /* AppDelegate.swift */,
-				7821183B20625B3300649CF6 /* Employee.swift */,
-				7821183F20626AAB00649CF6 /* Alerts.swift */,
-				7821184320627B5400649CF6 /* Common.swift */,
-				78211845206285D300649CF6 /* BaseViewController.swift */,
-				782118222062224100649CF6 /* Main.storyboard */,
 				782118272062224100649CF6 /* LaunchScreen.storyboard */,
-				7821183D20625DB900649CF6 /* TableViewCellEmployee.swift */,
+				7845CD6520650309005DC2FC /* Utility */,
+				7845CD64206502B1005DC2FC /* Models */,
+				7845CD622065029E005DC2FC /* View */,
+				7845CD63206502A6005DC2FC /* Presenters */,
+				782118252062224100649CF6 /* Assets.xcassets */,
+				7821182A2062224100649CF6 /* Info.plist */,
+			);
+			path = iOSSqlite;
+			sourceTree = "<group>";
+		};
+		7845CD622065029E005DC2FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7845CD67206503EA005DC2FC /* Common */,
+				7845CD6620650331005DC2FC /* TableCells */,
+				782118222062224100649CF6 /* Main.storyboard */,
 				782118202062224100649CF6 /* LoginViewController.swift */,
 				7821183120623A3F00649CF6 /* SignupViewController.swift */,
 				7821183320623A5700649CF6 /* ResetPasswordViewController.swift */,
 				7821183520623A6700649CF6 /* HomeViewController.swift */,
 				782118392062424500649CF6 /* EmployeeViewController.swift */,
-				782118252062224100649CF6 /* Assets.xcassets */,
-				7821182A2062224100649CF6 /* Info.plist */,
 			);
-			path = iOSSqlite;
+			path = View;
+			sourceTree = "<group>";
+		};
+		7845CD63206502A6005DC2FC /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				7845CD5E2064F72D005DC2FC /* LoginPresenter.swift */,
+				7845CD6C20650D7D005DC2FC /* SignupPresenter.swift */,
+				7845CD6E20650F29005DC2FC /* ResetPasswordPresenter.swift */,
+				7845CD70206511A1005DC2FC /* HomePresenter.swift */,
+				7845CD7220651A68005DC2FC /* EmployeePresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		7845CD64206502B1005DC2FC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7845CD602064F846005DC2FC /* User.swift */,
+				7821183B20625B3300649CF6 /* Employee.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7845CD6520650309005DC2FC /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				7821183F20626AAB00649CF6 /* Alerts.swift */,
+				7821184320627B5400649CF6 /* Common.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		7845CD6620650331005DC2FC /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				7821183D20625DB900649CF6 /* TableViewCellEmployee.swift */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		7845CD67206503EA005DC2FC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				78211845206285D300649CF6 /* BaseViewController.swift */,
+				7845CD6820650423005DC2FC /* BaseView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,15 +232,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7845CD612064F846005DC2FC /* User.swift in Sources */,
+				7845CD6D20650D7D005DC2FC /* SignupPresenter.swift in Sources */,
+				7845CD5F2064F72D005DC2FC /* LoginPresenter.swift in Sources */,
 				7821183620623A6700649CF6 /* HomeViewController.swift in Sources */,
 				7821183E20625DB900649CF6 /* TableViewCellEmployee.swift in Sources */,
+				7845CD6F20650F29005DC2FC /* ResetPasswordPresenter.swift in Sources */,
 				78211846206285D300649CF6 /* BaseViewController.swift in Sources */,
 				7821183220623A3F00649CF6 /* SignupViewController.swift in Sources */,
 				782118212062224100649CF6 /* LoginViewController.swift in Sources */,
 				7821183C20625B3300649CF6 /* Employee.swift in Sources */,
 				7821181F2062224100649CF6 /* AppDelegate.swift in Sources */,
+				7845CD71206511A1005DC2FC /* HomePresenter.swift in Sources */,
+				7845CD7320651A68005DC2FC /* EmployeePresenter.swift in Sources */,
 				7821183A2062424500649CF6 /* EmployeeViewController.swift in Sources */,
 				7821184020626AAB00649CF6 /* Alerts.swift in Sources */,
+				7845CD6920650423005DC2FC /* BaseView.swift in Sources */,
 				7821184420627B5400649CF6 /* Common.swift in Sources */,
 				7821183420623A5700649CF6 /* ResetPasswordViewController.swift in Sources */,
 			);

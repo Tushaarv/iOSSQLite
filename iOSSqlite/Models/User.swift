@@ -1,14 +1,14 @@
 //
-//  Employee.swift
+//  User.swift
 //  iOSSqlite
 //
-//  Created by Tushar Vengurlekar on 21/03/18.
+//  Created by Tushar Vengurlekar on 23/03/18.
 //  Copyright © 2018 Tushaar's. All rights reserved.
 //
 
 import Foundation
 
-class Employee {
+class User {
     var name:String?
     var email:String?
     var password:String?

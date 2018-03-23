@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol LoginView: BaseView {
+    func showHomeScreen()
+    func showSignupScreen()
+    func showResetPasswordScreen()
+}
+
 class LoginViewController: BaseViewController {
     
     private struct LocalConstants {
@@ -18,16 +24,18 @@ class LoginViewController: BaseViewController {
         // Segues
         static let SEGUE_REGISTER:String = "SEGUE_LOGIN_REGISTER"
         static let SEGUE_RESET:String = "SEGUE_LOGIN_RESET"
-        
     }
     
     @IBOutlet weak var textEmail: UITextField!
     @IBOutlet weak var textPassword: UITextField!
     
+    var presenter:LoginPresenter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = LoginPresenter(view: self)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -41,8 +49,17 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func didClickLogin(_ sender: UIButton) {
-        self.verifyLogin()
+        let email:String = (textEmail.text?.trimmingCharacters(in: .whitespaces).lowercased())!
+        let password = textPassword.text!
+        let loginUser = User(name: "", email: email, password: password)
+        presenter?.verifyLogin(loginUser: loginUser)
     }
+    
+    @IBAction func unwindToLogin(segue:UIStoryboardSegue) {}
+    
+}
+
+extension LoginViewController : LoginView {
     
     func showHomeScreen() {
         let storyboard = UIStoryboard(name: LocalConstants.STORYBOARD_MAIN, bundle: nil)
@@ -59,33 +76,8 @@ class LoginViewController: BaseViewController {
         self.performSegue(withIdentifier: LocalConstants.SEGUE_RESET, sender: self)
     }
     
-    func verifyLogin() {
-        let email:String = (textEmail.text?.trimmingCharacters(in: .whitespaces).lowercased())!
-        let password = textPassword.text!
-        if self.isLoginDataValid(email:email, password: password) {
-            // Equate Login Details
-            if email == "tushaarv@gmail.com" && password == "qwerty" {
-                self.showHomeScreen()
-            }
-            else {
-                Alerts.showError(parentView: self, message: "Authentication Failed")
-            }
-        }
+    func showError(message: String) {
+        Alerts.showError(parentView: self, message: message)
     }
-    
-    func isLoginDataValid(email:String, password:String) -> Bool {
-        if !(email.isValidEmail()) {
-            Alerts.showError(parentView: self, message: "Invalid Email")
-            return false
-        }
-        if !(password.isValidPassword()) {
-            Alerts.showError(parentView: self, message: "Invalid Password")
-            return false
-        }
-        return true
-    }
-    
-    @IBAction func unwindToLogin(segue:UIStoryboardSegue) {}
-    
 }
 

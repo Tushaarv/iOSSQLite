@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol HomeView:BaseView {
+    
+    func populateEmployees(employees:[Employee])
+    func showEmployeeScreen()
+}
+
 class HomeViewController: BaseViewController {
     
     private struct LocalConstants {
@@ -25,13 +31,16 @@ class HomeViewController: BaseViewController {
     var employees:[Employee] = [Employee]()
     var selectedEmployee:Employee?
     
+    var presenter:HomePresenter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter = HomePresenter(view: self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.fetchEmployees()
+        self.presenter.fetchEmployees()
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,25 +64,6 @@ class HomeViewController: BaseViewController {
                 employeeViewController.mode = EmployeeViewController.Mode.view
             }
         }
-    }
-    
-    func showEmployeeScreen() {
-        self.performSegue(withIdentifier: LocalConstants.SEGUE_HOME_EMPLOYEE, sender: self)
-    }
-    
-    func fetchEmployees() {
-        self.employees = [Employee]()
-        self.employees.append(contentsOf: Common.employees)
-        tableEmployees.reloadData()
-    }
-    
-    func deleteEmployee(indexPath:IndexPath) {
-        let employee =  self.employees[indexPath.row]
-        let index:Int = employees.index{$0 === employee}!
-        Common.employees.remove(at: index)
-        fetchEmployees()
-        tableEmployees.reloadData()
-        //        tableEmployees.deleteRows(at: [indexPath], with: .automatic)
     }
     
     @IBAction func unwindToHome(segue: UIStoryboardSegue) {}
@@ -103,7 +93,25 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.deleteEmployee(indexPath: indexPath)
+            let employee =  self.employees[indexPath.row]
+            self.presenter.deleteEmployee(employee: employee)
         }
+    }
+}
+
+extension HomeViewController : HomeView {
+    
+    func showError(message: String) {
+        Alerts.showError(parentView: self, message: message)
+    }
+    
+    func populateEmployees(employees:[Employee]) {
+        self.employees = [Employee]()
+        self.employees.append(contentsOf: Common.employees)
+        tableEmployees.reloadData()
+    }
+    
+    func showEmployeeScreen() {
+        self.performSegue(withIdentifier: LocalConstants.SEGUE_HOME_EMPLOYEE, sender: self)
     }
 }
