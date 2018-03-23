@@ -8,11 +8,10 @@
 
 import UIKit
 
-protocol LoginView: class {
+protocol LoginView: BaseView {
     func showHomeScreen()
     func showSignupScreen()
     func showResetPasswordScreen()
-    func showError(message:String)
 }
 
 class LoginViewController: BaseViewController {
