@@ -102,7 +102,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController : HomeView {
     
     func showError(message: String) {
-        Alerts.showError(parentView: self, message: "Invalid Password")
+        Alerts.showError(parentView: self, message: message)
     }
     
     func populateEmployees(employees:[Employee]) {

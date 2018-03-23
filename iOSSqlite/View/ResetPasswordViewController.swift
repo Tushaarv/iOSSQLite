@@ -45,6 +45,6 @@ class ResetPasswordViewController: BaseViewController {
 
 extension ResetPasswordViewController : ResetPasswordView {
     func showError(message: String) {
-        Alerts.showError(parentView: self, message: "Invalid Password")
+        Alerts.showError(parentView: self, message: message)
     }
 }

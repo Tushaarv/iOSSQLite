@@ -27,6 +27,7 @@
 		7845CD6D20650D7D005DC2FC /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845CD6C20650D7D005DC2FC /* SignupPresenter.swift */; };
 		7845CD6F20650F29005DC2FC /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845CD6E20650F29005DC2FC /* ResetPasswordPresenter.swift */; };
 		7845CD71206511A1005DC2FC /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845CD70206511A1005DC2FC /* HomePresenter.swift */; };
+		7845CD7320651A68005DC2FC /* EmployeePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845CD7220651A68005DC2FC /* EmployeePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		7845CD6C20650D7D005DC2FC /* SignupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
 		7845CD6E20650F29005DC2FC /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
 		7845CD70206511A1005DC2FC /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		7845CD7220651A68005DC2FC /* EmployeePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				7845CD6C20650D7D005DC2FC /* SignupPresenter.swift */,
 				7845CD6E20650F29005DC2FC /* ResetPasswordPresenter.swift */,
 				7845CD70206511A1005DC2FC /* HomePresenter.swift */,
+				7845CD7220651A68005DC2FC /* EmployeePresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				7821183C20625B3300649CF6 /* Employee.swift in Sources */,
 				7821181F2062224100649CF6 /* AppDelegate.swift in Sources */,
 				7845CD71206511A1005DC2FC /* HomePresenter.swift in Sources */,
+				7845CD7320651A68005DC2FC /* EmployeePresenter.swift in Sources */,
 				7821183A2062424500649CF6 /* EmployeeViewController.swift in Sources */,
 				7821184020626AAB00649CF6 /* Alerts.swift in Sources */,
 				7845CD6920650423005DC2FC /* BaseView.swift in Sources */,

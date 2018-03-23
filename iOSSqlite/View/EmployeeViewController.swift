@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol EmployeeView:BaseView {
+    
+    func showHomeScreen ()
+}
+
 class EmployeeViewController: BaseViewController {
     
     enum Mode {
@@ -32,8 +37,12 @@ class EmployeeViewController: BaseViewController {
     var mode:Mode! = .new
     var selectedEmployee:Employee?
     
+    var presenter:EmployeePresenter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.presenter = EmployeePresenter(view: self)
         
         if self.selectedEmployee != nil {
             self.textName.text = self.selectedEmployee?.name
@@ -73,62 +82,23 @@ class EmployeeViewController: BaseViewController {
             self.editModeEnabled(true)
         }
         else if mode == .new {
-            addNewEmployee()
+            
+            let email:String = (textEmail.text?.trimmingCharacters(in: .whitespaces).lowercased())!
+            let name = textName.text!
+            self.presenter.addNewEmployee(employee:Employee(name: name, email: email))
         }
         else {
-            updateEmployee(employee:self.selectedEmployee!)
+            let name = textName.text!
+            self.presenter.updateEmployee(selectedEmployee:self.selectedEmployee!,
+                                          updatedData:Employee(name: name, email: ""))
         }
     }
+}
+
+extension EmployeeViewController : EmployeeView {
     
-    func addNewEmployee() {
-        
-        let email:String = (textEmail.text?.trimmingCharacters(in: .whitespaces).lowercased())!
-        let name = textName.text!
-        if self.isEmployeeDataValid(name:name, email:email) {
-            // Save Employee Details
-            let employee:Employee = Employee(name: name, email: email)
-            if !self.exployeeExists(employee: employee) {
-                Common.employees.append(employee)
-                
-                self.showHomeScreen()
-            }
-            else {
-                Alerts.showError(parentView: self, message: "Employee Save Failed")
-            }
-        }
-    }
-    
-    func exployeeExists(employee:Employee) -> Bool {
-        return Common.employees.filter{$0.email == employee.email}.count != 0
-    }
-    
-    func updateEmployee(employee: Employee) {
-        let name = textName.text!
-        if self.isEmployeeDataValid(name:name, email:employee.email!) {
-            if self.exployeeExists(employee: employee) {
-                // Update Employee Details
-                let temp:Employee = Common.employees.filter{$0.email! == employee.email!}.first!
-                let index:Int = Common.employees.index{$0 === temp}!
-                Common.employees[index].name = name
-                
-                self.showHomeScreen()
-            }
-            else {
-                Alerts.showError(parentView: self, message: "Employee update Failed")
-            }
-        }
-    }
-    
-    func isEmployeeDataValid(name:String, email:String) -> Bool {
-        if !(name.isValidString()) {
-            Alerts.showError(parentView: self, message: "Invalid Name")
-            return false
-        }
-        if !(email.isValidEmail()) {
-            Alerts.showError(parentView: self, message: "Invalid Email")
-            return false
-        }
-        return true
+    func showError(message: String) {
+        Alerts.showError(parentView: self, message: message)
     }
     
     func showHomeScreen () {

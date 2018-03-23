@@ -53,6 +53,6 @@ extension SignupViewController : SignupView {
     }
     
     func showError(message: String) {
-        Alerts.showError(parentView: self, message: "Invalid Password")
+        Alerts.showError(parentView: self, message: message)
     }
 }
