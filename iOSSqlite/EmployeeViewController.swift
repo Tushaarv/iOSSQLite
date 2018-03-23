@@ -56,7 +56,8 @@ class EmployeeViewController: BaseViewController {
         self.buttonSave.setTitle(value == true ? LocalConstants.BUTTON_SAVE_MODE : LocalConstants.BUTTON_EDIT_MODE, for: .normal)
         self.textName.isUserInteractionEnabled = value
         
-        if mode != .new {
+        // Dont allow to update email in edit mode as it should be unique
+        if mode != .edit {
             self.textEmail.isUserInteractionEnabled = value
         }
     }
@@ -67,8 +68,9 @@ class EmployeeViewController: BaseViewController {
     
     @IBAction func didClickSave(_ sender: UIButton) {
         if mode == .view {
-            self.editModeEnabled(true)
+            // Update to edit mode based on the value
             mode = .edit
+            self.editModeEnabled(true)
         }
         else if mode == .new {
             addNewEmployee()
