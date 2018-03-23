@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ResetPasswordView: BaseView {
+    func showLoginScreen()
+}
+
 class ResetPasswordViewController: BaseViewController {
     
     private struct LocalConstants {
@@ -18,8 +22,11 @@ class ResetPasswordViewController: BaseViewController {
 
     @IBOutlet weak var textEmail: UITextField!
     
+    var presenter:ResetPasswordPresenter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = ResetPasswordPresenter(view: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,31 +34,17 @@ class ResetPasswordViewController: BaseViewController {
     }
     
     @IBAction func didClickResetPassword(_ sender: UIButton) {
-        self.resetPassword()
+        let email:String = (textEmail.text?.trimmingCharacters(in: .whitespaces).lowercased())!
+        self.presenter.resetPassword(loginUser:User(name: "", email: email))
     }
     
     func showLoginScreen () {
         self.performSegue(withIdentifier: LocalConstants.SEGUE_LOGIN, sender: self)
     }
-    
-    func resetPassword() {
-        let email:String = (textEmail.text?.trimmingCharacters(in: .whitespaces).lowercased())!
-        if self.isResetDataValid(email:email) {
-            // Request Password Reset
-            if email == "tushaarv@gmail.com" {
-                self.showLoginScreen()
-            }
-            else {
-                Alerts.showError(parentView: self, message: "Password Reset Failed")
-            }
-        }
-    }
-    
-    func isResetDataValid(email:String) -> Bool {
-        if !(email.isValidEmail()) {
-            Alerts.showError(parentView: self, message: "Invalid Email")
-            return false
-        }
-        return true
+}
+
+extension ResetPasswordViewController : ResetPasswordView {
+    func showError(message: String) {
+        Alerts.showError(parentView: self, message: "Invalid Password")
     }
 }

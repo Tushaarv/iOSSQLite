@@ -25,6 +25,7 @@
 		7845CD612064F846005DC2FC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845CD602064F846005DC2FC /* User.swift */; };
 		7845CD6920650423005DC2FC /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845CD6820650423005DC2FC /* BaseView.swift */; };
 		7845CD6D20650D7D005DC2FC /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845CD6C20650D7D005DC2FC /* SignupPresenter.swift */; };
+		7845CD6F20650F29005DC2FC /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845CD6E20650F29005DC2FC /* ResetPasswordPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		7845CD602064F846005DC2FC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7845CD6820650423005DC2FC /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		7845CD6C20650D7D005DC2FC /* SignupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
+		7845CD6E20650F29005DC2FC /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				7845CD5E2064F72D005DC2FC /* LoginPresenter.swift */,
 				7845CD6C20650D7D005DC2FC /* SignupPresenter.swift */,
+				7845CD6E20650F29005DC2FC /* ResetPasswordPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				7845CD5F2064F72D005DC2FC /* LoginPresenter.swift in Sources */,
 				7821183620623A6700649CF6 /* HomeViewController.swift in Sources */,
 				7821183E20625DB900649CF6 /* TableViewCellEmployee.swift in Sources */,
+				7845CD6F20650F29005DC2FC /* ResetPasswordPresenter.swift in Sources */,
 				78211846206285D300649CF6 /* BaseViewController.swift in Sources */,
 				7821183220623A3F00649CF6 /* SignupViewController.swift in Sources */,
 				782118212062224100649CF6 /* LoginViewController.swift in Sources */,
