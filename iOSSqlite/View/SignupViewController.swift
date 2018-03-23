@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SignupView: BaseView {
+    func showHomeScreen()
+}
+
 class SignupViewController: BaseViewController {
     
     private struct LocalConstants {
@@ -20,8 +24,11 @@ class SignupViewController: BaseViewController {
     @IBOutlet weak var textEmail: UITextField!
     @IBOutlet weak var textPassword: UITextField!
     
+    var presenter:SignupPresenter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = SignupPresenter(view: self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,44 +36,23 @@ class SignupViewController: BaseViewController {
     }
     
     @IBAction func didClickSignup(_ sender: UIButton) {
-        self.signup()
-    }
-    
-    func signup() {
         let email:String = (textEmail.text?.trimmingCharacters(in: .whitespaces).lowercased())!
         let name:String = (textName.text?.trimmingCharacters(in: .whitespaces))!
         let password = textPassword.text!
-        if self.isSignupDataValid(email:email, name:name, password: password) {
-            // Signup User
-            if email == "tushaarv@gmail.com" && password == "qwerty" {
-                self.showHomeScreen()
-            }
-            else {
-                Alerts.showError(parentView: self, message: "Signup Failed")
-            }
-        }
+        self.presenter.signup(newUser: User(name: name, email: email, password: password))
     }
-    
-    func isSignupDataValid(email:String, name:String, password:String) -> Bool {
-        if !(name.isValidString()) {
-            Alerts.showError(parentView: self, message: "Invalid Name")
-            return false
-        }
-        if !(email.isValidEmail()) {
-            Alerts.showError(parentView: self, message: "Invalid Email")
-            return false
-        }
-        if !(password.isValidPassword()) {
-            Alerts.showError(parentView: self, message: "Invalid Password")
-            return false
-        }
-        return true
-    }
+}
+
+extension SignupViewController : SignupView {
     
     func showHomeScreen() {
         let storyboard = UIStoryboard(name: LocalConstants.STORYBOARD_MAIN, bundle: nil)
         let homeNavigationController = storyboard.instantiateViewController(withIdentifier: LocalConstants.VIEWCONTROLLER_HOME)
         UIApplication.shared.keyWindow?.rootViewController = homeNavigationController
         UIApplication.shared.keyWindow?.makeKeyAndVisible()
+    }
+    
+    func showError(message: String) {
+        Alerts.showError(parentView: self, message: "Invalid Password")
     }
 }
