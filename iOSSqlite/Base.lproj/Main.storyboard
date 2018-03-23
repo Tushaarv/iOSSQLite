@@ -386,9 +386,11 @@
                         <outlet property="imageEmployee" destination="ZqC-IR-K2w" id="p5P-Cv-WG5"/>
                         <outlet property="textEmail" destination="1Dz-tj-0eN" id="whG-km-4td"/>
                         <outlet property="textName" destination="69O-b9-EEq" id="yi7-UR-BTm"/>
+                        <segue destination="0X6-be-6lp" kind="unwind" identifier="SEGUE_EMPLOYEE_HOME" unwindAction="unwindToHomeWithSegue:" id="pKz-7E-AJs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="roi-L8-6uZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0X6-be-6lp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3141.5999999999999" y="1330.8845577211396"/>
         </scene>

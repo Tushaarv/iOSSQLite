@@ -17,6 +17,10 @@ class EmployeeViewController: BaseViewController {
     }
     
     private struct LocalConstants {
+        
+        // Segues
+        static let SEGUE_HOME:String = "SEGUE_EMPLOYEE_HOME"
+        
         static let BUTTON_SAVE_MODE = "Save"
         static let BUTTON_EDIT_MODE = "Edit"
     }
@@ -83,6 +87,8 @@ class EmployeeViewController: BaseViewController {
             let employee:Employee = Employee(name: name, email: email)
             if !self.exployeeExists(employee: employee) {
                 Common.employees.append(employee)
+                
+                self.showHomeScreen()
             }
             else {
                 Alerts.showError(parentView: self, message: "Employee Save Failed")
@@ -102,6 +108,8 @@ class EmployeeViewController: BaseViewController {
                 let temp:Employee = Common.employees.filter{$0.email! == employee.email!}.first!
                 let index:Int = Common.employees.index{$0 === temp}!
                 Common.employees[index].name = name
+                
+                self.showHomeScreen()
             }
             else {
                 Alerts.showError(parentView: self, message: "Employee update Failed")
@@ -119,5 +127,9 @@ class EmployeeViewController: BaseViewController {
             return false
         }
         return true
+    }
+    
+    func showHomeScreen () {
+        self.performSegue(withIdentifier: LocalConstants.SEGUE_HOME, sender: self)
     }
 }

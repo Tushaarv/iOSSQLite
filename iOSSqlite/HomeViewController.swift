@@ -75,6 +75,8 @@ class HomeViewController: BaseViewController {
         tableEmployees.reloadData()
         //        tableEmployees.deleteRows(at: [indexPath], with: .automatic)
     }
+    
+    @IBAction func unwindToHome(segue: UIStoryboardSegue) {}
 }
 
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
