@@ -21,6 +21,8 @@
 		7821184020626AAB00649CF6 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821183F20626AAB00649CF6 /* Alerts.swift */; };
 		7821184420627B5400649CF6 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821184320627B5400649CF6 /* Common.swift */; };
 		78211846206285D300649CF6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78211845206285D300649CF6 /* BaseViewController.swift */; };
+		7845CD5F2064F72D005DC2FC /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845CD5E2064F72D005DC2FC /* LoginPresenter.swift */; };
+		7845CD612064F846005DC2FC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845CD602064F846005DC2FC /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		7821183F20626AAB00649CF6 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		7821184320627B5400649CF6 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		78211845206285D300649CF6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		7845CD5E2064F72D005DC2FC /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		7845CD602064F846005DC2FC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				7821181E2062224100649CF6 /* AppDelegate.swift */,
+				7845CD602064F846005DC2FC /* User.swift */,
 				7821183B20625B3300649CF6 /* Employee.swift */,
 				7821183F20626AAB00649CF6 /* Alerts.swift */,
 				7821184320627B5400649CF6 /* Common.swift */,
@@ -81,6 +86,7 @@
 				782118272062224100649CF6 /* LaunchScreen.storyboard */,
 				7821183D20625DB900649CF6 /* TableViewCellEmployee.swift */,
 				782118202062224100649CF6 /* LoginViewController.swift */,
+				7845CD5E2064F72D005DC2FC /* LoginPresenter.swift */,
 				7821183120623A3F00649CF6 /* SignupViewController.swift */,
 				7821183320623A5700649CF6 /* ResetPasswordViewController.swift */,
 				7821183520623A6700649CF6 /* HomeViewController.swift */,
@@ -163,6 +169,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7845CD612064F846005DC2FC /* User.swift in Sources */,
+				7845CD5F2064F72D005DC2FC /* LoginPresenter.swift in Sources */,
 				7821183620623A6700649CF6 /* HomeViewController.swift in Sources */,
 				7821183E20625DB900649CF6 /* TableViewCellEmployee.swift in Sources */,
 				78211846206285D300649CF6 /* BaseViewController.swift in Sources */,
