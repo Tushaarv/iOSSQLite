@@ -26,7 +26,10 @@ class SignupPresenter: SignupPresenterProtocol {
         
         if self.isSignupDataValid(email:newUser.email!, name:newUser.name!, password: newUser.password!) {
             // Signup User
-            if newUser.email! == "tushaarv@gmail.com" && newUser.password! == "qwerty" {
+            let signupResult = UserRepository().addUser(user: User(name: newUser.name!,
+                                                                   email: newUser.email!,
+                                                                   password: newUser.password!))
+            if signupResult.success {
                 self.view.showHomeScreen()
             }
             else {

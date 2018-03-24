@@ -28,13 +28,13 @@ class UserRepository {
         return Common.users.filter{$0.email == user.email}.count != 0
     }
     
-    func addUser(user:User) -> Bool {
+    func addUser(user:User) -> (success:Bool, user:User?) {
         if !self.userExists(user: user) {
             Common.users.append(user)
-            return true
+            return (success:true, user:user)
         }
         else {
-            return false
+            return (success:false, user:user)
         }
     }
     
