@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Common.employees.append(Employee(name: "Tushar", email: "tushar@transerve.com"))
         Common.employees.append(Employee(name: "Swarupa", email: "swarupa@creative.com"))
         
+        Common.users.append(User(name: "", email: "tushaarv@gmail.com", password: "qwerty"))
+        
         return true
     }
 

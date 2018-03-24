@@ -22,8 +22,10 @@ class LoginPresenter: LoginPresenterProtocol {
     
     func verifyLogin(loginUser:User) {
         if self.isLoginDataValid(email:loginUser.email!, password: loginUser.password!) {
+            
             // Equate Login Details
-            if loginUser.email! == "tushaarv@gmail.com" && loginUser.password! == "qwerty" {
+            let loginResult = UserRepository().validateLogin(email: loginUser.email!, password: loginUser.password!)
+            if loginResult.success {
                 self.view.showHomeScreen()
             }
             else {

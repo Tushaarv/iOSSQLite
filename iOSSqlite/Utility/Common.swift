@@ -11,6 +11,7 @@ import UIKit
 
 class Common {
     public static var employees:[Employee] = [Employee]()
+    public static var users:[User] = [User]()
 }
 
 
